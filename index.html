@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>formulaire</title>
+</head>
+<body>
+    <h1>formulaire zenbnb</h1>
+  
+    <form id="formReserv">
+        <div id="resultat"></div>
+
+        <div id="saved-data">
+            Nom : <span id="display-name"></span> | Email : <span id="display-email"></span>
+            <button id="delete-storage">Supprimer</button>
+        </div>
+        <div class="form">
+            <label for="nom">Nom complet</label>
+            <input type="text" id="nom">
+        </div>
+        <div class="form">
+            <label for="adresse">Adresse</label>
+            <input type="text" id="address">
+        </div>
+        <div class="form">
+            <label for="email">Email</label>
+            <input type="email" id="email">
+        </div>
+        <div class="form">
+            <label for="telephone">Télephone</label>
+            <input type="tel" id="phone">
+        </div>
+        <div class="form">
+            <label for="logement">type de logement</label>
+            <select name="logement" id="logement" required>
+                <option value="">selectionnez votre logement</option>
+                <option value="maison">maison</option>
+                <option value="appartement">appartement</option>
+            </select>
+        </div>
+        <div class="form" id="optionMaison" style="display: none;">
+            <label>options pour la maison</label>
+            <div>
+                <input type="checkbox" id="jardin" name="maison" value="jardin">
+                <label for="jardin">jardin</label>
+            </div>
+            <div>
+                <input type="checkbox" id="piscine" name="maison" value="piscine">
+                <label for="piscine" >Piscine</label>
+            </div>
+        </div>
+        <div class="form" id="optionAppartement" style="display:none;">
+            <label>Options pour appartement</label>
+            <div>
+                <input type="checkbox" id="ascenseur" name="appartement" value="ascenseur">
+                <label for="ascenseur">ascenseur</label>
+            </div>
+            <div>
+                <input type="checkbox" id="parking" name="appartement" value="parking">
+                <label for="parking">Parking</label>
+            </div>
+        </div>
+        <div class="form">
+            <label for="personnes">nombre de personnes</label>
+            <input type="number" id="personne" name="personnes" min="1" required>
+        </div>
+
+        <div class="form">
+            <label for="depart">date de depart</label>
+            <input type="date" id="depart" name="depart" required>
+        </div>
+
+        <div class="form">
+            <label for="arriver">date d'arriver</label>
+            <input type="date" id="arriver" name="arriver" required>
+        </div>
+        <div class="form">
+            <label>services supplémentaire</label>
+            <div>
+                <input type="checkbox" id="chauffeur" name="service" value="chauffeur">
+                <label for="chauffeur">chauffeur</label>
+            </div>
+            <div>
+                <input type="checkbox" name="service" id="petitDejeuner" value="petitDejeuner">
+                <label for="petitDejeuner">petit-dejeuner</label>
+            </div>
+            <div>
+                <input type="checkbox" id="guide" name="service" value="guide">
+                <label for="guide">guide</label>
+            </div>
+        </div>
+        <div class="form hidden" id="regimeAlimentaire">
+            <label for="regime">régime alimentaire</label>
+            <select name="regime" id="regime">
+                <option value="">sélectionnez</option>
+                <option value="vegetarien">végétarien</option>
+                <option value="vegan">vegan</option>
+                <option value="poisson">poisson</option>
+            </select>
+        </div>
+        <button type="submit">reserver</button>
+    </form>
+    <div id="result" class="error"></div>
+</body>
+<script src="script.js"></script>
+</html>
